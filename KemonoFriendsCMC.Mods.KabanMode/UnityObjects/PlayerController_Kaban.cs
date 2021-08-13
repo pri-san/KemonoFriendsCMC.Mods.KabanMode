@@ -24,6 +24,7 @@ namespace KemonoFriendsCMC.Mods.KabanMode.UnityObjects
 
         protected override void Attack()
         {
+            //TODO 空中で投げ可能なのを防止
             SetChatOnAttack();
             AttackPaperPlane();
         }
