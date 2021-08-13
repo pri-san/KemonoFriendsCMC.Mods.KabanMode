@@ -64,6 +64,7 @@ namespace KemonoFriendsCMC.Mods.KabanMode.UnityObjects
                 true,
                 -1f
                 );
+            //TODO 敵が近くにいない場合は加算しないようにする
             // サボり判定回避
             SingletonMonoBehaviour<CharacterManager>.Instance.PlayerAttackStamp();
             // ジャストドッジ値加算
