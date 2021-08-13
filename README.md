@@ -1,10 +1,17 @@
 # KemonoFriendsCMC.Mods.KabanMode
 
-けもフレCMC の かばんちゃん操作用パッチ
+けものフレンズ Cellien May Cry の かばんちゃん操作用パッチ
 
 ## 概要
 
 * 操作キャラであるサーバルちゃんをかばんちゃんに置き換えます
+
+### けものフレンズ Cellien May Cry ゲーム本体情報
+* 製作者様
+  * 坂本龍様
+* ダウンロードURL
+  * ふりーむ！：https://www.freem.ne.jp/win/game/25092
+  * フリーゲーム夢現：https://freegame-mugen.jp/action/game_9372.html
 
 ## かばんちゃん操作方法
 
@@ -17,6 +24,7 @@
 
 ## 注意点
 
+* 本パッチ実行ファイル、及びソースコードは`MITライセンス`です
 * 下記の行為はご遠慮ください
 1. 著作者（ゲーム本体及びMOD開発者）を騙る行為
 2. `けものフレンズプロジェクト 二次創作ガイドライン`（ https://kemono-friends.jp/guideline/ ）に違反する行為
