@@ -68,6 +68,8 @@ namespace KemonoFriendsCMC.Mods.KabanMode.Patches
             pCon.obstacleForGrounded = result.transform.Find("Obstacle(Clone)").GetComponent<NavMeshAgent>();
             pCon.audioListener = result.transform.Find("AudioListener(Clone)");
             pCon.pileAttackChecker = result.transform.Find("PileAttackChecker(Clone)").gameObject;
+
+            // プレハブに設定されているオブジェクトをインスタンスのものに変更
             pCon.searchArea = new SearchArea[]
             {
                 result.transform.Find("SearchArea_Player(Clone)").GetComponent<SearchArea>()
@@ -100,6 +102,7 @@ namespace KemonoFriendsCMC.Mods.KabanMode.Patches
                 pCon.effect[7].pivot = pCon.centerPivot; // Eff_PlayerQuick
             }
             pCon.talkName = friendsKaban.talkName;
+            pCon.actionIcon[0] = result.transform.Find("Canvas(Clone)/Image_Climb").gameObject;
 
             // 子オブジェクトの値を加工
             {
