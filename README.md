@@ -41,6 +41,7 @@
   * Assembly-CSharp.dll
   * NavMeshComponents.dll
   * netstandard.dll
+  * Rewired_Core.dll
   * System.Diagnostics.StackTrace.dll
   * System.dll
   * System.Globalization.Extensions.dll
