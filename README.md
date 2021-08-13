@@ -9,6 +9,7 @@
 ### けものフレンズ Cellien May Cry ゲーム本体情報
 * 製作者様
   * 坂本龍様
+    * Twitter: @SakamotoRyuu
 * ダウンロードURL
   * ふりーむ！：https://www.freem.ne.jp/win/game/25092
   * フリーゲーム夢現：https://freegame-mugen.jp/action/game_9372.html
