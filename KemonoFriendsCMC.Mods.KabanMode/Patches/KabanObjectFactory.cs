@@ -114,7 +114,12 @@ namespace KemonoFriendsCMC.Mods.KabanMode.Patches
                 Traverse traverse = Traverse.Create(result.transform.Find("152.!Root/15.joint_HipMaster/CConCenter/DamageDetection").GetComponent<DamageDetectionKnockAssort>());
                 // PlayerControllerをクローン後のものに変更
                 traverse.Field<CharacterBase>("parentCBase").Value = pCon;
-            };
+            }
+            {
+                CharacterController characterController = result.GetComponent<CharacterController>();
+                // 足が地面につく高さに修正
+                characterController.center = new Vector3(characterController.center.x, 0.68f, characterController.center.z);
+            }
 
             // ゲームオブジェクトのプロパティを変更
             result.layer = pConOrigin.gameObject.layer;
