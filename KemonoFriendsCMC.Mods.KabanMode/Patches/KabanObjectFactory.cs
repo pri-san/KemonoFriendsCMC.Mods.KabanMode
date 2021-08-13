@@ -57,6 +57,7 @@ namespace KemonoFriendsCMC.Mods.KabanMode.Patches
             PlayerController pConOrigin = playerPrefab.GetComponent<PlayerController>();
             PlayerController_Kaban pCon = result.AddComponent<PlayerController_Kaban>();
             UnityObjectUtil.ApplyComponentValue(pCon, pConOrigin);
+            pCon.maxST = 150f;
             pCon.pointer = result.transform.Find("Pointer(Clone)");
             pCon.lookAtTarget = result.transform.Find("LookAt(Clone)");
             pCon.grassDisplacer = result.transform.Find("GrassDisplacer(Clone)").gameObject;
