@@ -64,6 +64,11 @@ namespace KemonoFriendsCMC.Mods.KabanMode.UnityObjects
                 true,
                 -1f
                 );
+            // サボり判定回避
+            SingletonMonoBehaviour<CharacterManager>.Instance.PlayerAttackStamp();
+            // ジャストドッジ値加算
+            SingletonMonoBehaviour<CharacterManager>.Instance.JustDodgeAmountPlus(120.0f);
+            
         }
     }
 }
