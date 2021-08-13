@@ -1,4 +1,7 @@
 /.vs
 
+/dll/*
+!/dll/.gitkeep
+
 /KemonoFriendsCMC.Mods.KabanMode/bin
 /KemonoFriendsCMC.Mods.KabanMode/obj
