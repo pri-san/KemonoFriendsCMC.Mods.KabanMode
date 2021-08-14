@@ -24,7 +24,7 @@ namespace KemonoFriendsCMC.Mods.KabanMode.UnityObjects
 
         protected override void Attack()
         {
-            //TODO 空中で投げ可能なのを防止
+            // 空中で投げられるのは仕様（ゲームバランス的に空中投げはそこまで有利じゃない）
             SetChatOnAttack();
             AttackPaperPlane();
         }
@@ -65,7 +65,7 @@ namespace KemonoFriendsCMC.Mods.KabanMode.UnityObjects
                 true,
                 -1f
                 );
-            //TODO 敵が近くにいない場合は加算しないようにする
+            //TODO 敵が近くにいない場合は加算しないようにする（紙飛行機発見時に上昇とかでもよさそう）
             // サボり判定回避
             SingletonMonoBehaviour<CharacterManager>.Instance.PlayerAttackStamp();
             // ジャストドッジ値加算
