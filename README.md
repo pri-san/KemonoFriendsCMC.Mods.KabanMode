@@ -31,6 +31,7 @@
 1. BepInExの導入、及びマネージコードストリッピングされていないdllファイルを適用したゲーム本体を準備する
   * 手順: https://github.com/pri-san/KemonoFriendsCMC.Mods.HowToInstall/blob/main/README.md
 2. `(ゲーム本体のルート)\BepInEx\plugins`に本パッチの実行ファイル(`KemonoFriendsCMC.Mods.KabanMode.dll`)を配置する
+  * 本パッチの実行ファイル: https://github.com/pri-san/KemonoFriendsCMC.Mods.KabanMode/releases の最新バージョンのKemonoFriendsCMC.Mods.KabanMode.dll
 3. 一度ゲーム本体を起動し、タイトル画面が表示されたら終了する
 4. 生成された`(ゲーム本体のルート)\BepInEx\config\KemonoFriendsCMC.Mods.KabanMode.cfg`内の`[General]`配下の`Enabled`を`true`に書き換える
 
