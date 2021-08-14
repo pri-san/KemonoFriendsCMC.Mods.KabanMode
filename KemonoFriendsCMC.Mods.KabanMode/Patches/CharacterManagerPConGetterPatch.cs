@@ -6,50 +6,49 @@ namespace KemonoFriendsCMC.Mods.KabanMode.Patches
     [HarmonyPatch(typeof(CharacterManager), "pCon", MethodType.Getter)]
     public static class CharacterManagerPConGetterPatch
     {
-        public static bool Prefix(
+        public static void Prefix(
             CharacterManager __instance,
-            ref PlayerController ___pConInternal,
-            ref PlayerController __result
+            ref PlayerController ___pConInternal
             )
         {
             if (!ConfigValues.Enabled.Value)
             {
-                return true;
+                return;
             }
-            else if (__instance.playerIndex != 0)
+            if (___pConInternal)
             {
-                return true;
+                return;
             }
-            // playerIndex == 0の時、かばんちゃんに変更
-            if (!___pConInternal)
+
+            GameObject[] array = GameObject.FindGameObjectsWithTag("Player");
+            for (int i = 0; i < array.Length; i++)
             {
-                GameObject[] array = GameObject.FindGameObjectsWithTag("Player");
-                for (int i = 0; i < array.Length; i++)
+                ___pConInternal = array[i].GetComponent<PlayerController>();
+                if (___pConInternal)
                 {
-                    ___pConInternal = array[i].GetComponent<global::PlayerController>();
-                    if (___pConInternal)
-                    {
-                        __instance.playerObj = array[i];
-                        break;
-                    }
+                    __instance.playerObj = array[i];
+                    break;
                 }
-                if (!__instance.playerObj)
-                {
-                    if (SingletonMonoBehaviour<GameManager>.Instance)
-                    {
-                        __instance.playerIndex = __instance.GetOriginallyPlayerIndex;
-                    }
-                    __instance.playerObj = KabanObjectFactory.InstantiateKabanObj(__instance, null, null);
-                    ___pConInternal = __instance.playerObj.GetComponent<global::PlayerController>();
-                }
-                __instance.playerTrans = __instance.playerObj.transform;
-                __instance.playerLookAt = ___pConInternal.lookAtTarget;
-                __instance.playerSearchTarget = ___pConInternal.searchTarget[0].transform;
-                __instance.playerAudioListener = ___pConInternal.audioListener;
-                __instance.lastLandingPosition = __instance.playerTrans.position;
             }
-            __result = ___pConInternal;
-            return false;
+            if (!__instance.playerObj)
+            {
+                if (SingletonMonoBehaviour<GameManager>.Instance)
+                {
+                    __instance.playerIndex = __instance.GetOriginallyPlayerIndex;
+                }
+                // playerIndex == 0の時、かばんちゃんに変更
+                if (__instance.playerIndex != 0)
+                {
+                    return;
+                }
+                __instance.playerObj = KabanObjectFactory.InstantiateKabanObj(__instance, null, null);
+                ___pConInternal = __instance.playerObj.GetComponent<PlayerController>();
+            }
+            __instance.playerTrans = __instance.playerObj.transform;
+            __instance.playerLookAt = ___pConInternal.lookAtTarget;
+            __instance.playerSearchTarget = ___pConInternal.searchTarget[0].transform;
+            __instance.playerAudioListener = ___pConInternal.audioListener;
+            __instance.lastLandingPosition = __instance.playerTrans.position;
         }
     }
 }
