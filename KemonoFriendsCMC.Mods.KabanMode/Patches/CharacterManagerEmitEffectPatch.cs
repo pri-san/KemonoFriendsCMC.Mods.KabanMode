@@ -10,15 +10,10 @@ namespace KemonoFriendsCMC.Mods.KabanMode.Patches
             ref int friendsId
             )
         {
-            if (!ConfigValues.Enabled.Value)
-            {
-                return;
-            }
-            else if (!SingletonMonoBehaviour<CharacterManager>.Instance || SingletonMonoBehaviour<CharacterManager>.Instance.playerIndex != 0)
-            {
-                return;
-            }
-            else if (effectNum < 64 || effectNum > 75 || friendsId != 1)
+            if (!ConfigValues.Enabled.Value ||
+                !SingletonMonoBehaviour<CharacterManager>.Instance || SingletonMonoBehaviour<CharacterManager>.Instance.playerIndex != 0 || 
+                effectNum < 64 || effectNum > 75 || friendsId != 1
+                )
             {
                 return;
             }

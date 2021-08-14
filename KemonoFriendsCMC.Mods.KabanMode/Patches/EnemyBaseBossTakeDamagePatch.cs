@@ -11,11 +11,9 @@ namespace KemonoFriendsCMC.Mods.KabanMode.Patches
             ref CharacterBase attacker
             )
         {
-            if (!ConfigValues.Enabled.Value)
-            {
-                return;
-            }
-            else if (!SingletonMonoBehaviour<CharacterManager>.Instance || SingletonMonoBehaviour<CharacterManager>.Instance.playerIndex != 0)
+            if (!ConfigValues.Enabled.Value || 
+                !SingletonMonoBehaviour<CharacterManager>.Instance || SingletonMonoBehaviour<CharacterManager>.Instance.playerIndex != 0
+                )
             {
                 return;
             }

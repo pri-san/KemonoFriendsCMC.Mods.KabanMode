@@ -11,11 +11,9 @@ namespace KemonoFriendsCMC.Mods.KabanMode.Patches
             ref PlayerController ___pConInternal
             )
         {
-            if (!ConfigValues.Enabled.Value)
-            {
-                return;
-            }
-            if (___pConInternal)
+            if (!ConfigValues.Enabled.Value ||
+                ___pConInternal
+                )
             {
                 return;
             }

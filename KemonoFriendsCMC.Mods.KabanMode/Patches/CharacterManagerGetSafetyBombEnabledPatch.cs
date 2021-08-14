@@ -10,11 +10,9 @@ namespace KemonoFriendsCMC.Mods.KabanMode.Patches
             CharacterManager __instance
             )
         {
-            if (!ConfigValues.Enabled.Value)
-            {
-                return true;
-            }
-            else if (__instance.playerIndex != 0)
+            if (!ConfigValues.Enabled.Value ||
+                __instance.playerIndex != 0
+                )
             {
                 return true;
             }
