@@ -72,25 +72,43 @@ namespace KemonoFriendsCMC.Mods.KabanMode.Patches
                 // 参照先のオブジェクトをresultのものに変更
                 pCon.searchArea = new SearchArea[]
                 {
-                result.transform.Find("SearchArea_Player(Clone)").GetComponent<SearchArea>()
+                    result.transform.Find("SearchArea_Player(Clone)").GetComponent<SearchArea>()
                 };
                 pCon.searchTarget = new GameObject[]
                 {
-                result.transform.Find("152.!Root/15.joint_HipMaster/CConCenter/SearchTarget").gameObject,
+                    result.transform.Find("152.!Root/15.joint_HipMaster/CConCenter/SearchTarget").gameObject,
                 };
                 pCon.drownHeightPivot = result.transform.Find("DrownHeightPivot");
-                pCon.footstepDetectionObj = new GameObject[0]; //TODO 足跡つけるオブジェクトを実装
+                pCon.footstepDetectionObj = new GameObject[2];
+                {
+                    GameObject footstepDetectionObj = UnityObjectUtil.AddCloneChild(
+                        result.transform.Find("152.!Root/15.joint_HipMaster/16.joint_RightHip/17.joint_RightKnee/20.joint_RightFoot/21.!joint_RightToe").gameObject,
+                        playerInstance.transform.Find("170.!Root/12.joint_HipMaster/13.joint_RightHip/14.joint_RightKnee/16.joint_RightFoot/FootstepDetection_R").gameObject
+                        );
+                    FootstepDetection footstepDetection = footstepDetectionObj.GetComponent<FootstepDetection>();
+                    footstepDetection.judgeFootMaterial = pCon.judgeFootMaterial;
+                    pCon.footstepDetectionObj[0] = footstepDetectionObj;
+                }
+                {
+                    GameObject footstepDetectionObj = UnityObjectUtil.AddCloneChild(
+                        result.transform.Find("152.!Root/15.joint_HipMaster/23.joint_LeftHip/24.joint_LeftKnee/27.joint_LeftFoot/28.!joint_LeftToe").gameObject,
+                        Object.Instantiate(playerInstance.transform.Find("170.!Root/12.joint_HipMaster/70.joint_LeftHip/71.joint_LeftKnee/73.joint_LeftFoot/FootstepDetection_L").gameObject)
+                        );
+                    FootstepDetection footstepDetection = footstepDetectionObj.GetComponent<FootstepDetection>();
+                    footstepDetection.judgeFootMaterial = pCon.judgeFootMaterial;
+                    pCon.footstepDetectionObj[1] = footstepDetectionObj;
+                }
                 pCon.goldenMatSet = new CharacterBase.ChangeMatSet[0]; //TODO 金みんみ所持時の見た目変更を実装（優先度低）
                 pCon.photoExclude = new GameObject[]
                 {
-                 result.transform.Find("SearchArea_Player(Clone)/TargetUI_Canvas").gameObject,
-                 result.transform.Find("Pointer(Clone)/PointerBody").gameObject,
+                     result.transform.Find("SearchArea_Player(Clone)/TargetUI_Canvas").gameObject,
+                     result.transform.Find("Pointer(Clone)/PointerBody").gameObject,
                 };
                 pCon.projectileNoticeObj = result.transform.Find("Balloon_Alart_World(Clone)").gameObject;
                 pCon.cloth = null;
                 pCon.touchChecker = new CheckTriggerStay[]
                 {
-                result.transform.Find("TouchChecker(Clone)").GetComponent<CheckTriggerStay>(),
+                    result.transform.Find("TouchChecker(Clone)").GetComponent<CheckTriggerStay>(),
                 };
                 pCon.weapon = new FriendsBase.Weapon[0];
                 pCon.pilePivot = result.transform.Find("152.!Root");
