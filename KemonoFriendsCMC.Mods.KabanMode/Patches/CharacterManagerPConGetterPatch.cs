@@ -18,30 +18,41 @@ namespace KemonoFriendsCMC.Mods.KabanMode.Patches
                 return;
             }
 
+            PlayerController pConInternal = null;
+            GameObject playerObj = null;
             GameObject[] array = GameObject.FindGameObjectsWithTag("Player");
             for (int i = 0; i < array.Length; i++)
             {
-                ___pConInternal = array[i].GetComponent<PlayerController>();
-                if (___pConInternal)
+                pConInternal = array[i].GetComponent<PlayerController>();
+                if (pConInternal)
                 {
-                    __instance.playerObj = array[i];
+                    playerObj = array[i];
                     break;
                 }
             }
-            if (!__instance.playerObj)
+            if (!playerObj)
             {
+                int playerIndex = __instance.playerIndex;
                 if (SingletonMonoBehaviour<GameManager>.Instance)
                 {
-                    __instance.playerIndex = __instance.GetOriginallyPlayerIndex;
+                    playerIndex = __instance.GetOriginallyPlayerIndex;
                 }
                 // playerIndex == 0の時、かばんちゃんに変更
-                if (__instance.playerIndex != 0)
+                if (playerIndex != 0)
                 {
                     return;
                 }
+                __instance.playerIndex = playerIndex;
+
                 __instance.playerObj = KabanObjectFactory.InstantiateKabanObj(__instance, null, null);
                 ___pConInternal = __instance.playerObj.GetComponent<PlayerController>();
             }
+            else
+            {
+                __instance.playerObj = playerObj;
+                ___pConInternal = pConInternal;
+            }
+
             __instance.playerTrans = __instance.playerObj.transform;
             __instance.playerLookAt = ___pConInternal.lookAtTarget;
             __instance.playerSearchTarget = ___pConInternal.searchTarget[0].transform;
