@@ -20,7 +20,7 @@ namespace KemonoFriendsCMC.Mods.KabanMode.Patches
             {
                 return true;
             }
-
+            // playerIndex == 0の時、かばんちゃんに変更
             if (!___pConInternal)
             {
                 GameObject[] array = GameObject.FindGameObjectsWithTag("Player");

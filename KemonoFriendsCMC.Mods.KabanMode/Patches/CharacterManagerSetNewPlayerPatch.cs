@@ -21,6 +21,7 @@ namespace KemonoFriendsCMC.Mods.KabanMode.Patches
                 return true;
             }
 
+            // playerIndex == 0の時、かばんちゃんに変更
             Vector3 position = Vector3.zero;
             Quaternion rotation = Quaternion.identity;
             if (__instance.playerTrans)

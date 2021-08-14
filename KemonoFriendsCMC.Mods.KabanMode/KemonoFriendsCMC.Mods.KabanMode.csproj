@@ -33,6 +33,8 @@
   <ItemGroup>
     <Compile Include="ConfigValues.cs" />
     <Compile Include="EntryPoint.cs" />
+    <Compile Include="Patches\CharacterManagerEmitEffectPatch.cs" />
+    <Compile Include="Patches\CharacterManagerGetSafetyBombEnabledPatch.cs" />
     <Compile Include="Patches\CharacterManagerPConGetterPatch.cs" />
     <Compile Include="Patches\CharacterManagerSetNewPlayerPatch.cs" />
     <Compile Include="Patches\EnemyBaseBossTakeDamagePatch.cs" />

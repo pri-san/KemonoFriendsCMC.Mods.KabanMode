@@ -1,14 +1,13 @@
 ﻿using HarmonyLib;
-using UnityEngine;
 
 namespace KemonoFriendsCMC.Mods.KabanMode.Patches
 {
-    [HarmonyPatch(typeof(EnemyBaseBoss), "TakeDamage")]
-    public static class EnemyBaseBossTakeDamagePatch
+    [HarmonyPatch(typeof(CharacterManager), "EmitEffect")]
+    public static class CharacterManagerEmitEffectPatch
     {
         public static void Prefix(
-            EnemyBaseBoss __instance,
-            ref CharacterBase attacker
+            int effectNum,
+            ref int friendsId
             )
         {
             if (!ConfigValues.Enabled.Value)
@@ -19,11 +18,12 @@ namespace KemonoFriendsCMC.Mods.KabanMode.Patches
             {
                 return;
             }
-            // playerIndex == 0の時、他のフレンズの攻撃でもトドメをさせるよう修正（かばんちゃんが攻撃できない為）
-            if (__instance.GetNowHP() == 1)
+            else if (effectNum < 64 || effectNum > 75 || friendsId != 1)
             {
-                attacker = null;
+                return;
             }
+            // playerIndex == 0、かつ爆弾の時、爆弾の生成位置をプレイヤーに変更
+            friendsId = -1;
         }
     }
 }
