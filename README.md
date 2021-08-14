@@ -22,9 +22,17 @@
 ## 導入方法
 
 1. BepInExの導入、及びマネージコードストリッピングされていないdllファイルを適用したゲーム本体を準備する
-2. `(1のルート)\BepInEx\plugins`に本パッチの実行ファイル(`KemonoFriendsCMC.Mods.KabanMode.dll`)を配置する
+2. `(ゲーム本体のルート)\BepInEx\plugins`に本パッチの実行ファイル(`KemonoFriendsCMC.Mods.KabanMode.dll`)を配置する
 3. 一度ゲーム本体を起動し、タイトル画面が表示されたら終了する
-4. 生成された`(1のルート)\BepInEx\config\KemonoFriendsCMC.Mods.KabanMode.cfg`内の`[General]`配下の`Enabled`を`true`に書き換える
+4. 生成された`(ゲーム本体のルート)\BepInEx\config\KemonoFriendsCMC.Mods.KabanMode.cfg`内の`[General]`配下の`Enabled`を`true`に書き換える
+
+## (ゲーム本体のルート)\BepInEx\config\KemonoFriendsCMC.Mods.KabanMode.cfg の内容
+
+* [General]
+  * Enabled
+    * 本パッチの機能を有効にするかどうかの設定
+    * `true`: 有効、`false`: 無効
+    * 初期値: `false`
 
 ## 動作確認環境
 
@@ -43,6 +51,11 @@
 * 本パッチの実行ファイル、及びソースコードは`MITライセンス`です
   * ライセンス本文は`LICENSE`ファイルを参照してください
   * ゲーム本体のライセンスに関してはゲーム本体付属の説明書を参照してください
+
+## 連絡先
+
+* Twitter: @Puri_san_P
+* e-mail: pri.san.pg@gmail.com
 
 ## ビルド手順(開発者向け)
 
