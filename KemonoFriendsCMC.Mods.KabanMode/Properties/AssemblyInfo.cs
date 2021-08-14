@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("pri-san")]
 [assembly: AssemblyProduct("KemonoFriendsCMC.Mods.KabanMode")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyCopyright("Copyright © 2021 pri-san")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
