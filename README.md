@@ -61,7 +61,7 @@
 
 ### 以下のファイルをdllフォルダに追加
 
-* `(BepInExのルート)\core` から取得
+* `(BepInExのルート)\BepInEx\core` から取得
   * 0Harmony.dll
   * BepInEx.dll
 * `(ゲーム本体のルート)\KemonoFriendsCMC_Data\Managed` から取得
