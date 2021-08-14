@@ -1,6 +1,6 @@
 # KemonoFriendsCMC.Mods.KabanMode
 
-けものフレンズ Cellien May Cry（以下「ゲーム本体」とする）の かばんちゃん操作用パッチ（以下「本パッチ」とする）
+けものフレンズ Cellien May Cry（以下「ゲーム本体」とする）の かばんちゃん操作用MOD（以下「本MOD」とする）
 
 ## ゲーム本体の情報
 * 製作者様
@@ -10,7 +10,7 @@
   * ふりーむ！：https://www.freem.ne.jp/win/game/25092
   * フリーゲーム夢現：https://freegame-mugen.jp/action/game_9372.html
 
-## 本パッチの概要
+## 本MODの概要
 
 * 操作キャラであるサーバルちゃんをかばんちゃんに置き換えます
 
@@ -30,8 +30,8 @@
 
 1. BepInExの導入、及びマネージコードストリッピングされていないdllファイルを適用したゲーム本体を準備する
   * 手順: https://github.com/pri-san/KemonoFriendsCMC.Mods.HowToInstall/blob/main/README.md
-2. `(ゲーム本体のルート)\BepInEx\plugins`に本パッチの実行ファイル(`KemonoFriendsCMC.Mods.KabanMode.dll`)を配置する
-  * 本パッチの実行ファイル: https://github.com/pri-san/KemonoFriendsCMC.Mods.KabanMode/releases の最新バージョンのKemonoFriendsCMC.Mods.KabanMode.dll
+2. `(ゲーム本体のルート)\BepInEx\plugins`に本MODの実行ファイル(`KemonoFriendsCMC.Mods.KabanMode.dll`)を配置する
+  * 本MODの実行ファイル: https://github.com/pri-san/KemonoFriendsCMC.Mods.KabanMode/releases の最新バージョンのKemonoFriendsCMC.Mods.KabanMode.dll
 3. 一度ゲーム本体を起動し、タイトル画面が表示されたら終了する
 4. 生成された`(ゲーム本体のルート)\BepInEx\config\KemonoFriendsCMC.Mods.KabanMode.cfg`内の`[General]`配下の`Enabled`を`true`に書き換える
 
@@ -39,7 +39,7 @@
 
 * [General]
   * Enabled
-    * 本パッチの機能を有効にするかどうかの設定
+    * 本MODの機能を有効にするかどうかの設定
     * `true`: 有効、`false`: 無効
     * 初期値: `false`
 
@@ -50,14 +50,14 @@
 ## 注意点
 
 * 下記の行為はご遠慮ください
-  1. 著作者（ゲーム本体及び本パッチ開発者）を騙る行為
+  1. 著作者（ゲーム本体及び本MOD開発者）を騙る行為
   2. `けものフレンズプロジェクト 二次創作ガイドライン`（ https://kemono-friends.jp/guideline/ ）に違反する行為
-  3. 本パッチにより変化した挙動をゲーム本体の仕様と騙る行為
+  3. 本MODにより変化した挙動をゲーム本体の仕様と騙る行為
   4. ゲーム本体の定める規約に違反する行為
-* 本パッチはゲーム本体の制作とは無関係の有志のパッチです
+* 本MODはゲーム本体の制作とは無関係の有志のMODです
   * データ消失、パフォーマンスの低下等の責任を負いかねますので、自己責任で利用してください
   * バグや不具合が発生することがありますので、*セーブデータのバックアップ*、*ゲーム本体のバックアップ*を行った上で実行することを推奨します
-* 本パッチの実行ファイル、及びソースコードは`MITライセンス`です
+* 本MODの実行ファイル、及びソースコードは`MITライセンス`です
   * ライセンス本文は`LICENSE`ファイルを参照してください
   * ゲーム本体のライセンスに関してはゲーム本体付属の説明書を参照してください
 
