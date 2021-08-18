@@ -12,7 +12,7 @@ namespace KemonoFriendsCMC.Mods.KabanMode.Patches
         {
             if (!ConfigValues.Enabled.Value ||
                 !SingletonMonoBehaviour<CharacterManager>.Instance || SingletonMonoBehaviour<CharacterManager>.Instance.playerIndex != 0 || 
-                effectNum < 64 || effectNum > 75 || friendsId != 1
+                effectNum < 65 || effectNum > 76 || friendsId != 1
                 )
             {
                 return;
